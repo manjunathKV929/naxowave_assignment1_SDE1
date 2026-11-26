@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: careflow-ai
+    env: docker
+    dockerfilePath: Dockerfile
+    plan: free
+    region: oregon
+    autoDeploy: true
+    envVars:
+      - key: DATABASE_URL
+        value: sqlite:///./careflow.db
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: ELEVENLABS_VOICE_ID
+        value: 21m00Tcm4TlvDq8ikWAM
+      - key: ENABLE_SILERO_VAD
+        value: "true"
